@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": false,
+  "redirects": [
+    { "source": "/website", "destination": "/website/", "permanent": true },
+    { "source": "/jpII-portal", "destination": "/jpII-portal/", "permanent": true },
+    { "source": "/website/assets/pages/portal.html", "destination": "/jpII-portal/", "permanent": true },
+    { "source": "/website/assets/pages/careers.html", "destination": "/jpII-portal/careers.html", "permanent": true }
+  ]
+}

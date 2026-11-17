@@ -1,0 +1,11 @@
+{
+  "name": "jpii-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "build": "node check-website.mjs && node scripts/build-static.mjs",
+    "test": "node --test jpII-portal/tests/records.test.js"
+  }
+}
