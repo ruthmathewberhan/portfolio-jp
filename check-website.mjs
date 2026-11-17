@@ -3,6 +3,9 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 const base=path.resolve('website');
 const portal=path.resolve('jpII-portal');
+for(const directory of [path.join(base,'assets/pages'),portal]){
+ if(!fs.existsSync(directory))throw new Error(`Missing build source directory: ${directory}. Ensure website and jpII-portal files are committed to this repository, not stored as unresolved Git submodules.`);
+}
 const files=[path.join(base,'index.html'),...fs.readdirSync(path.join(base,'assets/pages')).filter(n=>n.endsWith('.html')).map(n=>path.join(base,'assets/pages',n)),...fs.readdirSync(portal).filter(n=>n.endsWith('.html')).map(n=>path.join(portal,n))];
 const decode=s=>s.replaceAll('&amp;','&');
 let links=0;
